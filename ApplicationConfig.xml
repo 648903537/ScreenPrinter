@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScreenPrinter>
+  <LoginParameters>
+    <LogInType>USB</LogInType>
+    <LoadExtractPattern>^(\S.*);(\S.*)$</LoadExtractPattern>
+  </LoginParameters>
+  <ScannerParameters>
+    <SerialPort>COM5</SerialPort>
+    <BaudRate>9600</BaudRate>
+    <Parity>0</Parity>
+    <StopBits>1</StopBits>
+    <DataBits>8</DataBits>
+    <NewLineSymbol>\r</NewLineSymbol>
+    <High>05 4F 55 54 01</High>
+    <!--ESC[CESC[BESCOA1ESCIA#-->
+    <Low>ESC[CESC[BESCOA0ESCIA#</Low>
+    <EndCommand>ESCIA!ESC[A</EndCommand>
+  </ScannerParameters>
+  <GlobalParameters>
+    <Language>ZHS</Language>
+    <!--US,ZHS-->
+    <IPAddress>172.17.2.61</IPAddress>
+    <Port>1024</Port>
+    <OpenControlBox>Disable</OpenControlBox>
+    <DLExtractPattern>^\d{10,15}.*$|^WO.*$</DLExtractPattern>
+    <!--^SN\S*$|^\d{17}$-->
+    <MBNExtractPattern>X.*$</MBNExtractPattern>
+    <!--^(MBN)\S*$;[^(MBN)]*$-->
+    <EquipmentExtractPattern>^M\S.*$|^S\S.*$|^STE\S.*$</EquipmentExtractPattern>
+    <OpacityValue>70</OpacityValue>
+    <!-- 悬浮框的位置   1071,675-->
+    <LocationXY>1071|675</LocationXY>
+    <ThawingDuration>4</ThawingDuration>
+    <!--Solider paste thawing time mins-->
+    <ThawingCheck>Disable</ThawingCheck>
+    <!--Enable/Disable-->
+    <LockOutTime>0.5</LockOutTime>
+    <!--Stencil clean until next use hr-->
+    <UsageDurationSetting>12</UsageDurationSetting>
+    <!--Stencil use time hr-->
+    <GateKeeperTimer>5000</GateKeeperTimer>
+    <!--conver stop time ms-->
+    <SolderPasteValidity>24</SolderPasteValidity>
+    <!--Solder Paste usage time(hr)-->
+    <StencilPrefix>^STE.*$</StencilPrefix>
+    <TimerSpan>10</TimerSpan>
+    <!--ms-->
+    <StartTrigerStr>A</StartTrigerStr>
+    <EndTrigerStr>B</EndTrigerStr>
+    <NoRead>NO Read</NoRead>
+    <ReduceEquType>0</ReduceEquType>
+    <!--0. according to workplace 1. according attribute(USAGE_COUNT/MAX_USAGE)-->
+    <AUTH_TEAM>IPQC;Printer;SMT</AUTH_TEAM>
+    <IPI_STATUS_CHECK>ENABLE</IPI_STATUS_CHECK>
+    <!--ENABLE / DISABLE-->
+    <IPI_STATUS_CHECK_INTERVAL>30</IPI_STATUS_CHECK_INTERVAL>
+    <!--60s-->
+    <WarningQty>0</WarningQty>
+    <IsNeedTransWO>N</IsNeedTransWO>
+    <Authorized_Seria_Number_Transfer>IPQC</Authorized_Seria_Number_Transfer>
+    <Auto_Work_Order_Change>ENABLE</Auto_Work_Order_Change>
+    <!--DISABLE/ENABLE-->
+    <Production_Inspection_CHECK>DISABLE</Production_Inspection_CHECK>
+    <!--ENABLE / DISABLE-->
+    <Authorized_Allow_Production>IPQC</Authorized_Allow_Production>
+    <SHIFT_CHANGE_TIME>0800;1600;2200</SHIFT_CHANGE_TIME>
+
+    <RESTORE_TREAD_TIMER>60</RESTORE_TREAD_TIMER>
+    <!--60s -->
+    <RESTORE_TIME>10</RESTORE_TIME>
+    <!-- 10mins -->
+    <MATERIAL_SPLICING>DISABLE</MATERIAL_SPLICING>
+    <!--disable/enable-->
+  </GlobalParameters>
+  <Folders>
+    <LogFileFolder>D:\files\</LogFileFolder>
+    <LogTransOK>D:\files\transOK\</LogTransOK>
+    <LogTransError>D:\files\transError\</LogTransError>
+    <ChangeFileName>Disable</ChangeFileName>
+    <!--Enable: change file name; Disable: don't change file name-->
+    <CheckListFolder>D:\CheckList\</CheckListFolder>
+    <MDAPath>D:\MDA</MDAPath>
+
+    <FilterByFileName>disable</FilterByFileName>
+    <!--enable/disable-->
+    <FileNamePattern>^(\S{7}) \S.*$</FileNamePattern>
+  </Folders>
+</ScreenPrinter>
